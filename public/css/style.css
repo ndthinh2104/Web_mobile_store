@@ -7825,7 +7825,7 @@ ul#lt-store-result li {
 
 .lt-promotion-content .item img{
     width: 100%;
-    height: 362px;
+    min-height: 300px;
 }
 
 .header-content {
@@ -7836,7 +7836,7 @@ ul#lt-store-result li {
 .footer a.cps-vs, .footer a.cps-mt, .footer a.cps-atm {
     width: 44px;
     height: 27px;
-    background-image: url(https://cellphones.com.vn/media/icon/icon-online.png);
+    background-image: url(../images/icon-online.png);
     background-repeat: no-repeat;
     border-radius: 2px;
     display: inline-block;
@@ -7954,7 +7954,7 @@ button.btn.btn-primary.btn-block.btn-flat:hover {
     color: #fff;
     background-color:#e11b1e;
     position: relative;
-    left: 43%;
+    left: 45%;
     
 }
 
