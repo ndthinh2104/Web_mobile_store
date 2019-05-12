@@ -12,6 +12,7 @@ use App\BillDetail;
 use App\User;
 use Hash;
 use Auth;
+use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 
@@ -36,7 +37,9 @@ class PageController extends Controller
     public function getChitiet(Request $req){
         $sanpham = Product::where('id',$req->id)->first();
         $sp_tuongtu = Product::where('id_type',$sanpham->id_type)->paginate(6);
-    	return view('page.chitiet_sanpham',compact('sanpham','sp_tuongtu'));
+        $sanpham_khuyenmai = Product::where('promotion_price','<>',0)->paginate(5);
+        $sanpham2 = DB::table('products')->limit(5)->get();
+    	return view('page.chitiet_sanpham',compact('sanpham','sp_tuongtu','sanpham_khuyenmai','sanpham2'));
     }
 
     public function getLienHe(){

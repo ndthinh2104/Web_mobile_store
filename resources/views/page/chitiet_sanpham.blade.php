@@ -1,5 +1,6 @@
 @extends('master')
 @section('content')
+
 	<div class="inner-header">
 		<div class="container">
 			<div class="pull-left">
@@ -110,37 +111,24 @@
 				</div>
 				<div class="col-sm-3 aside">
 					<div class="widget">
-						<h3 class="widget-title">Best Sellers</h3>
+						<h3 class="widget-title">Bán chạy nhất</h3>
 						<div class="widget-body">
 							<div class="beta-sales beta-lists">
+								@foreach ($sanpham_khuyenmai as $sanpham1) 
 								<div class="media beta-sales-item">
-									<a class="pull-left" href="product.html"><img src="source/assets/dest/images/products/sales/1.png" alt=""></a>
+									<a class="pull-left" href="#"><img src="source/image/product/{{$sanpham1->image}}" alt=""></a>
 									<div class="media-body">
-										Sample Woman Top
-										<span class="beta-sales-price">$34.55</span>
+										{{$sanpham1->name}}
+										<span class="beta-sales-price">
+									@if($sanpham1->promotion_price==0)
+										<span class="flash-sale">{{number_format($sanpham1->unit_price)}} đồng</span>
+									@else
+										<span class="flash-del">{{number_format($sanpham1->unit_price)}} đồng</span>
+										<span class="flash-sale">{{number_format($sanpham1->promotion_price)}} đồng</span>
+									@endif</span>
 									</div>
 								</div>
-								<div class="media beta-sales-item">
-									<a class="pull-left" href="product.html"><img src="source/assets/dest/images/products/sales/2.png" alt=""></a>
-									<div class="media-body">
-										Sample Woman Top
-										<span class="beta-sales-price">$34.55</span>
-									</div>
-								</div>
-								<div class="media beta-sales-item">
-									<a class="pull-left" href="product.html"><img src="source/assets/dest/images/products/sales/3.png" alt=""></a>
-									<div class="media-body">
-										Sample Woman Top
-										<span class="beta-sales-price">$34.55</span>
-									</div>
-								</div>
-								<div class="media beta-sales-item">
-									<a class="pull-left" href="product.html"><img src="source/assets/dest/images/products/sales/4.png" alt=""></a>
-									<div class="media-body">
-										Sample Woman Top
-										<span class="beta-sales-price">$34.55</span>
-									</div>
-								</div>
+								@endforeach
 							</div>
 						</div>
 					</div> <!-- best sellers widget -->
@@ -148,34 +136,21 @@
 						<h3 class="widget-title">New Products</h3>
 						<div class="widget-body">
 							<div class="beta-sales beta-lists">
+							@foreach ($sanpham2 as $sanpham1) 
 								<div class="media beta-sales-item">
-									<a class="pull-left" href="product.html"><img src="source/assets/dest/images/products/sales/1.png" alt=""></a>
+									<a class="pull-left" href="#"><img src="source/image/product/{{$sanpham1->image}}" alt=""></a>
 									<div class="media-body">
-										Sample Woman Top
-										<span class="beta-sales-price">$34.55</span>
+										{{$sanpham1->name}}
+										<span class="beta-sales-price">
+									@if($sanpham1->promotion_price==0)
+										<span class="flash-sale">{{number_format($sanpham1->unit_price)}} đồng</span>
+									@else
+										<span class="flash-del">{{number_format($sanpham1->unit_price)}} đồng</span>
+										<span class="flash-sale">{{number_format($sanpham1->promotion_price)}} đồng</span>
+									@endif</span>
 									</div>
 								</div>
-								<div class="media beta-sales-item">
-									<a class="pull-left" href="product.html"><img src="source/assets/dest/images/products/sales/2.png" alt=""></a>
-									<div class="media-body">
-										Sample Woman Top
-										<span class="beta-sales-price">$34.55</span>
-									</div>
-								</div>
-								<div class="media beta-sales-item">
-									<a class="pull-left" href="product.html"><img src="source/assets/dest/images/products/sales/3.png" alt=""></a>
-									<div class="media-body">
-										Sample Woman Top
-										<span class="beta-sales-price">$34.55</span>
-									</div>
-								</div>
-								<div class="media beta-sales-item">
-									<a class="pull-left" href="product.html"><img src="source/assets/dest/images/products/sales/4.png" alt=""></a>
-									<div class="media-body">
-										Sample Woman Top
-										<span class="beta-sales-price">$34.55</span>
-									</div>
-								</div>
+								@endforeach
 							</div>
 						</div>
 					</div> <!-- best sellers widget -->
