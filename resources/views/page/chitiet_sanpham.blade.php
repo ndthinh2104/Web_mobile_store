@@ -56,7 +56,7 @@
 									<option value="4">4</option>
 									<option value="5">5</option>
 								</select>
-								<a class="add-to-cart" href="#"><i class="fa fa-shopping-cart"></i></a>
+								<a class="add-to-cart" href="{{route('themgiohang',$sanpham->id)}}"><i class="fa fa-shopping-cart"></i></a>
 								<div class="clearfix"></div>
 							</div>
 						</div>
@@ -98,7 +98,7 @@
 										</p>
 									</div>
 									<div class="single-item-caption">
-										<a class="add-to-cart pull-left" href="product.html"><i class="fa fa-shopping-cart"></i></a>
+										<a class="add-to-cart pull-left" href="{{route('themgiohang',$sptt->id)}}"><i class="fa fa-shopping-cart"></i></a>
 										<a class="beta-btn primary" href="product.html">Details <i class="fa fa-chevron-right"></i></a>
 										<div class="clearfix"></div>
 									</div>
@@ -116,7 +116,7 @@
 							<div class="beta-sales beta-lists">
 								@foreach ($sanpham_khuyenmai as $sanpham1) 
 								<div class="media beta-sales-item">
-									<a class="pull-left" href="#"><img src="source/image/product/{{$sanpham1->image}}" alt=""></a>
+									<a class="pull-left" href="{{route('chitietsanpham',$sanpham1->id)}}"><img src="source/image/product/{{$sanpham1->image}}" alt=""></a>
 									<div class="media-body">
 										{{$sanpham1->name}}
 										<span class="beta-sales-price">
@@ -138,7 +138,7 @@
 							<div class="beta-sales beta-lists">
 							@foreach ($sanpham2 as $sanpham1) 
 								<div class="media beta-sales-item">
-									<a class="pull-left" href="#"><img src="source/image/product/{{$sanpham1->image}}" alt=""></a>
+									<a class="pull-left" href="{{route('chitietsanpham',$sanpham1->id)}}"><img src="source/image/product/{{$sanpham1->image}}" alt=""></a>
 									<div class="media-body">
 										{{$sanpham1->name}}
 										<span class="beta-sales-price">

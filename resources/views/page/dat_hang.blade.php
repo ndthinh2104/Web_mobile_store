@@ -1,5 +1,18 @@
 @extends('master')
 @section('content')
+<?php 
+$fullname="";
+$email="";
+$phone="";
+$address="";
+
+if(Auth::user()->full_name)
+	$fullname=Auth::user()->full_name;
+	$email =Auth::user()->email;
+	$phone =Auth::user()->phone;
+	$address = Auth::user()->address;
+
+ ?>
 <div class="inner-header">
 		<div class="container">
 			<div class="pull-left">
@@ -27,7 +40,7 @@
 
 					<div class="form-block">
 						<label for="name">Họ tên*</label>
-						<input type="text" name="name" placeholder="Họ tên" required>
+						<input type="text" name="name" placeholder="Họ tên" value="{{$fullname}}" required>
 					</div>
 					<div class="form-block">
 						<label>Giới tính </label>
@@ -38,18 +51,18 @@
 
 					<div class="form-block">
 						<label for="email">Email*</label>
-						<input type="email" id="email" name="email" required placeholder="expample@gmail.com">
+						<input type="email" id="email" name="email" required value="{{$email}}" placeholder="expample@gmail.com">
 					</div>
 
 					<div class="form-block">
 						<label for="adress">Địa chỉ*</label>
-						<input type="text" id="address" name="address" placeholder="Street Address" required>
+						<input type="text" id="address" name="address" placeholder="Street Address" value="{{$address}}" required>
 					</div>
 					
 
 					<div class="form-block">
 						<label for="phone">Điện thoại*</label>
-						<input type="text" id="phone" name="phone" required>
+						<input type="text" id="phone" name="phone" value="{{$phone}}" required>
 					</div>
 					
 					<div class="form-block">

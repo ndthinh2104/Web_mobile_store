@@ -1,3 +1,4 @@
+
 <div id="header">
 		<div class="header-top">
 			<div class="container">
@@ -25,7 +26,7 @@
 		<div class="header-body">
 			<div class="container beta-relative">
 				<div class="pull-left">
-					<a href="index.html" id="logo"><img src="source/assets/dest/images/logo-cake.png" width="200px" alt=""></a>
+					<a href="index.html" id="logo"><img src="source/assets/dest/images/60343105_578424702649405_8124021539071852544_n.png" width="200px" alt=""></a>
 				</div>
 				<div class="pull-right beta-components space-left ov">
 					<div class="space10">&nbsp;</div>
