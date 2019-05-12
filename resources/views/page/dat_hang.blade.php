@@ -5,13 +5,12 @@ $fullname="";
 $email="";
 $phone="";
 $address="";
-
-if(Auth::user()->full_name)
+if(Auth::check()){	
 	$fullname=Auth::user()->full_name;
 	$email =Auth::user()->email;
 	$phone =Auth::user()->phone;
 	$address = Auth::user()->address;
-
+}
  ?>
 <div class="inner-header">
 		<div class="container">
