@@ -82,3 +82,41 @@ Route::get('dang-xuat',[
 	'uses'=>'PageController@postLogout'
 ]);
 
+//route for admin
+Route::group(['namespace' => '\App\Http\Controllers\admin'], function () {
+	Route::get('admin/login', [
+    	'as' => 'admin.login',
+    	'uses' => 'AdminAuthController@getLogin'
+    ]);
+    Route::post('admin/login', [
+    	'as' => 'admin.login',
+    	'uses' => 'AdminAuthController@postLogin'
+    ]);
+    // Route::group(['prefix' => config('core.base.general.admin_dir'), 'middleware' => 'auth'], function () {
+	Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
+	    Route::get('/', [
+	    	'as' => 'admin',
+	    	'uses' => 'AdminController@getIndex'
+	    ]);
+	    Route::get('/products', [
+	    	'as' => 'admin.products.list',
+	    	'uses' => 'AdminController@getListProduct'
+	    ]);
+	    Route::get('/customers', [
+	    	'as' => 'admin.customers.list',
+	    	'uses' => 'AdminController@getListCustomer'
+	    ]);
+	    Route::get('/product-categories', [
+	    	'as' => 'admin.products.cat',
+	    	'uses' => 'AdminController@getListProductType'
+	    ]);
+	    Route::get('/users', [
+	    	'as' => 'admin.users.list',
+	    	'uses' => 'AdminController@getListUser'
+	    ]);
+	    Route::get('/bills', [
+	    	'as' => 'admin.bills.list',
+	    	'uses' => 'AdminController@getListBill'
+	    ]);
+	});
+});
