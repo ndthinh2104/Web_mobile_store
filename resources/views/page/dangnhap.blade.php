@@ -38,7 +38,7 @@
 							<input class="form-control" type="password" name="password" required>
 						</div>
 						<div class="form-block">
-							<button type="submit" class="btn btn-primary">Đăng nhập</button>
+							<button type="submit" class="btn btn-primary">Đăng nhập </button>
 						</div>
 					</div>
 					<div class="col-sm-3"></div>
