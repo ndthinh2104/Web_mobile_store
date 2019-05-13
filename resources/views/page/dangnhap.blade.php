@@ -31,11 +31,11 @@
 						
 						<div class="form-block">
 							<label for="email">Địa chỉ Email:</label>
-							<input class="form-control" type="email" name="email" required>
+							<input class="form-control" placeholder="Nhập email" type="email" name="email" required>
 						</div>
 						<div class="form-block">
 							<label for="phone">Mật khẩu:</label>
-							<input class="form-control" type="password" name="password" required>
+							<input class="form-control" placeholder="Nhập mật khẩu" type="password" name="password" required>
 						</div>
 						<div class="form-block">
 							<button type="submit" class="btn btn-primary">Đăng nhập </button>
