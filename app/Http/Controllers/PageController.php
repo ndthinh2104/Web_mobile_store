@@ -136,6 +136,7 @@ class PageController extends Controller
         $user->full_name = $req->fullname;
         $user->email = $req->email;
         $user->password = Hash::make($req->password);
+        $user->status = "0";
         $user->phone = $req->phone;
         $user->address = $req->address;
         $user->save();
