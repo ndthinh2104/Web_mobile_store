@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th5 13, 2019 lúc 04:05 AM
+-- Thời gian đã tạo: Th5 14, 2019 lúc 03:36 PM
 -- Phiên bản máy phục vụ: 10.1.37-MariaDB
 -- Phiên bản PHP: 7.3.1
 
@@ -186,6 +186,56 @@ INSERT INTO `slide` (`id`, `link`, `image`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Cấu trúc bảng cho bảng `specification`
+--
+
+CREATE TABLE `specification` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `id_product` int(11) NOT NULL,
+  `size` text,
+  `resolution` text,
+  `os` text,
+  `chipset` text,
+  `ram` text,
+  `rom` text,
+  `camera` text,
+  `battery` text
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `specification`
+--
+
+INSERT INTO `specification` (`id`, `id_product`, `size`, `resolution`, `os`, `chipset`, `ram`, `rom`, `camera`, `battery`) VALUES
+(1, 2, '6.5\"', '1125 x 2436 pixels', 'iOS 12', 'Apple A12', '4 GB', '64GB', '2 camera 12 MP', '3174 mAh'),
+(2, 1, '5.8 inch', '1125 x 2436 pixels', 'iOS 11', 'Apple A11', '3GB', '64GB', 'Dual 12 MP', 'Li-ion 2716 mAh'),
+(3, 3, '6.3 inches', '1080 x 2340 pixels', 'Android 9.0 (Pie); MIUI 10', 'Qualcomm SDM660 Snapdragon 660', '4 GB', '128 GB', '48 MP, f/1.8, 1/2\", 0.8µm, PDAF\r\n5 MP, f/2.4, depth sensor', 'Li-Po 4000 mAh'),
+(5, 4, '5.5 inches', '1080 x 1920 pixels', 'iOS 11', 'Apple A11', '3 GB', '64 GB', '12 MP (f/1.8, 28mm, OIS) + 12 MP (f/2.8, 57mm), tự động lấy nét nhận diện theo giai đoạn, zoom quang 2x, 4 LED flash (2 tone)', 'Li-ion 2691 mAh'),
+(6, 5, '6.4 inches', '1080 x 2160 pixels', 'Android 9 Pie', 'Snapdragon 855', '6 GB', '128 GB', '3 Camera (48MP + 13MP + 16 MP)', '3300 mAh'),
+(7, 6, '6.39 inches', '1080 x 2340 pixels', 'Android 9.0 (Pie)', 'Qualcomm SDM845 Snapdragon 845 (10 nm)', '6 GB', '128 GB', '12 MP (wide), f/1.8, Dual Pixel + 12 MP (telephoto), 1/3.4\", 24 MP, 1/2.8\", 0.9µm + 2 MP, depth sensor', 'Li-Ion 3200 mAh'),
+(8, 7, '5.8 inches', '1080 x 2280 pixels', 'Android 8.1', 'Qualcomm SDM636 Snapdragon 636', '4 GB', '64 GB', '16 MP (f/2.0, 1.0µm, giro-EIS) + 5 MP (f/2.2, 1.2µm), tự động lấy nét nhận diện theo giai đoạn, LED flash kép (2 tone)', 'Li-ion 3060 mAh'),
+(9, 8, '6.18 inches', '1080 x 2280 pixels', 'Android 9', 'Qualcomm SDM710 Snapdragon 710 (10 nm)', '4 GB', '64 GB', '12 MP và 13 MP (2 camera), 20 MP', 'Li-Ion 3500 mAh'),
+(10, 9, '5.86 inches', '720 x 1520 pixels', '8.1 (Oreo); Android One', 'Mediatek MT6771 Helio P60', '3 GB', '32 GB', '13 MP (f/2.0, PDAF) + 5 MP (cảm biến chiều sâu), LED flash', 'Li-ion 3060 mAh'),
+(11, 11, '6.4 inches', '1440 x 2960 pixels', 'Android 9.0', 'Exynos 9820 8 nhân 64 bit', '8 GB', '128 GB', 'Camera sau - Độ phân giải (Multiple)\r\n12.0 MP + 16.0 MP + 12.0 MP, Camera sau - Khẩu độ (Đa khẩu độ)\r\nF1.5/F2.4 (Khẩu Độ Kép) , F2.2 , F2.4', 'Pin chuẩn Li-Ion 4100 mAh'),
+(12, 12, '6.4 inches', '1080 x 2220 pixels', 'Android v9.0 (Pie)', 'Samsung Exynos 9 Octa 9610', '4 GB', '64 GB', '25MP AF (F1.7) + 5MP FF (F2.2) + 8MP FF (F2.4)', '4,000 mAh'),
+(13, 13, '6.4 inches', '1440 x 2960 pixels', 'Android 8.1', 'Samsung Exynos 9 9810 Octa', '8 GB', '512 GB', '12 MP (f/1.5-2.4, 26mm, 1/2.55\", 1.4µm, PDAF điểm ảnh kép, OIS) + 12 MP (f/2.4, 52mm, 1/3.6\", 1µm, AF, OIS, zoom quang 2x), LED flash', 'Li-ion 4000 mAh'),
+(14, 14, '5.8 inches', '1080 x 2280 pixels', 'Android 9.0 (Pie); One UI', 'Exynos 9820 Octa (8 nm) - EMEA\r\nQualcomm SDM855 Snapdragon 855 (7 nm) - USA/LATAM, China', '6 GB', '128 GB', '12 MP, f/1.5-2.4, 26mm (wide), 1/2.55\", 1.4µm, Dual Pixel PDAF, OIS\r\n16 MP, f/2.2, 12mm (ultrawide)', '3100 mAh'),
+(15, 15, '6.2\"', '1440 x 2960 Pixels', 'Android 8.0', 'Exynos 9810 8 nhân 64 bit, 4 nhân 2.8 GHz & 4 nhân 1.7 GHz, 4 nhân 2.8 GHz & 4 nhân 1.7 GHz', '6 GB', '64 GB', '2 camera 12 MP, 8 MP', '3500 mAh'),
+(16, 16, '6.3 inches', '1080 x 2340 pixels', 'Android 8.1 (Oreo)', 'Exynos 7904 Octa (14 nm)', '3 GB', '32 GB', '2 Camera ( 13 MP, f/1.9 + 5 MP, f/2.2)', 'Li-Po 5000 mAh'),
+(17, 17, '6.5 inches', '1080 x 2340 pixels', 'Android 8.1 (Oreo), EMUI 8', 'HiSilicon Kirin 710', '4 GB', '64 GB', '16 MP, f/2.2 + 2 MP, chụp ảnh HDR, Padorama', '4.000 mAh'),
+(18, 18, '6.15 inches', '1080 x 2312 pixes', 'Android v9.0 (Pie)', 'Kirin 710', '6 GB', '128 GB', '24MP + 8MP + 2MP', '3340 mAh'),
+(19, 19, '6.4 inches', '1080 x 2340 pixels', 'Android v9.0 (Pie)', 'Hisilicon Kirin 980 8 nhân 64-bit', '8 GB', '256 GB', '40 MP, 20 MP và 8 MP (3 camera)', '4200 mAh'),
+(20, 20, '6.26 inches', '720 x 1520 pixels', 'Android 8.1 (Oreo), EMUI 8.2', 'Qualcomm Snapdragon 450 8 nhân 64-bit', '3 GB', '32 GB', '13 MP và 2 MP (2 camera)', 'Li-Ion 4000 mAh'),
+(21, 21, '6.39 inches', '1440 x 3120 pixels', 'Android 9.0', 'HiSilicon Kirin 980 (7 nm)', '6 GB', '128 GB', '40 MP, 20 MP, 8 MP', 'Li-Po 4200 mAh'),
+(22, 22, '6.5 inches', '1080 x 2340 pixels', 'Android 9.0 (Pie); ColorOS 6', 'Mediatek Helio P70 (12nm)', '6 GB', '64 GB', '48 MP, f/1.8, 1/2\", 0.8µm, PDAF\r\n5 MP, f/2.4, 1/5\", 1.12µm, depth sensor', 'Li-Po 4000 mAh'),
+(23, 23, '6.4 inches', '1080 x 2340 pixels', 'ColorOS 5.2 (Android 8.1)', 'Snapdragon 710 8 nhân 64-bit', '8 GB', '128 GB', '20 MP và 12 MP (2 camera)', 'Li-Ion 3700 mAh'),
+(24, 24, '6.18 inches', '1080 x 2280 pixels', 'Android VOS', 'SnapDragon 660', '6 GB', '64 GB', '12MP + 24MP, 12M@30fps & 24M@30fps,f/1.8, EIS', '3650mAh, QuickCharge 3.0'),
+(25, 25, '6.18 inches', '720 x 1520 pixels', 'Android VOS', 'SnapDragon 430', '2 GB', '16 GB', '13MP+2MP,1080p @ 30fps, Flash LED, EIS', '4000mAh'),
+(26, 26, '5.65 inches', '1080 x 2160 pixels', 'Android VOS', 'SnapDragon 660', '4 GB', '64 GB', '12 MP, f/1.8, 1/2.8\", 1.29µm, dual pixel PDAF, EIS\r\n5 MP, 1/5\", 1.12µm, depth sensor', '3100mAh, QuickCharge 3.0');
+
+-- --------------------------------------------------------
+
+--
 -- Cấu trúc bảng cho bảng `type_products`
 --
 
@@ -236,7 +286,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `status`, `full_name`, `email`, `password`, `phone`, `address`, `remember_token`, `created_at`, `updated_at`) VALUES
 (7, 1, 'Trần Trung Kiên', 'kinkin_288@yahoo.com.vn', '$2y$10$eOl1dJsN/kgpHTVVpBDajOH1WyYLifVSqinUMECUdpseknC4wGFG2', '0969909576', 'Số 14 Nguyễn Khuyến Đống Đa Hà Nội', NULL, '2019-05-12 03:45:45', '2019-05-12 03:45:45'),
-(8, 0, 'Phạm Tuấn Phong', 'phongpt@gmail.com', '$2y$10$HyKY5Uttc4lGaiwc6pPDl.jNN8N38CymCsicd6YEZitD04R/TBvg2', '0325656454', 'Số 1 Ô Chợ Dừa', NULL, '2019-05-13 01:55:45', '2019-05-13 01:55:45');
+(8, 0, 'Phạm Tuấn Phong', 'phongpt@gmail.com', '$2y$10$HyKY5Uttc4lGaiwc6pPDl.jNN8N38CymCsicd6YEZitD04R/TBvg2', '0325656454', 'Số 1 Ô Chợ Dừa', NULL, '2019-05-13 01:55:45', '2019-05-13 01:55:45'),
+(9, 1, 'Nguyễn Đức Thịnh', 'thinhnd@d2t.vn', '$2y$10$FOCfB6BU9xkW4tzJ.2ZH1uJQQAcECTyiBx3y1pzMrrG2p15/dWfFi', '0336956600', '26 Quán Sứ', NULL, '2019-05-13 07:34:33', '2019-05-13 07:34:33');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -282,6 +333,12 @@ ALTER TABLE `slide`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Chỉ mục cho bảng `specification`
+--
+ALTER TABLE `specification`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Chỉ mục cho bảng `type_products`
 --
 ALTER TABLE `type_products`
@@ -320,13 +377,19 @@ ALTER TABLE `customer`
 -- AUTO_INCREMENT cho bảng `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT cho bảng `slide`
 --
 ALTER TABLE `slide`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT cho bảng `specification`
+--
+ALTER TABLE `specification`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT cho bảng `type_products`
@@ -338,7 +401,7 @@ ALTER TABLE `type_products`
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Các ràng buộc cho các bảng đã đổ

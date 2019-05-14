@@ -1,6 +1,8 @@
 @extends('master')
 @section('content')
-
+@php
+dd($thongso);
+@endphp
 	<div class="inner-header">
 		<div class="container">
 			<div class="pull-left">
