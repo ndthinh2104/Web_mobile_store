@@ -11,7 +11,7 @@
 |
 */
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('trang-chu');
 });
 
 Route::get('index',[
@@ -81,7 +81,11 @@ Route::get('dang-xuat',[
 	'as'=>'logout',
 	'uses'=>'PageController@postLogout'
 ]);
+Route::get('tim-kiem', [
+	'as' => 'search',
+	'uses' => 'PageController@getSearch'
 
+]);
 //route for admin
 Route::group(['namespace' => '\App\Http\Controllers\admin'], function () {
 	Route::get('admin/login', [
