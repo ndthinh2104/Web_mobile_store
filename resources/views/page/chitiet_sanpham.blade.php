@@ -1,8 +1,6 @@
 @extends('master')
 @section('content')
-@php
-dd($thongso);
-@endphp
+
 	<div class="inner-header">
 		<div class="container">
 			<div class="pull-left">
@@ -67,11 +65,51 @@ dd($thongso);
 					<div class="space40">&nbsp;</div>
 					<div class="woocommerce-tabs">
 						<ul class="tabs">
-							<li><a href="#tab-description">Mô tả</a></li>
+							<li><a href="#tab-description">Thông số kỹ thuật</a></li>
 						</ul>
 
 						<div class="panel" id="tab-description">
-							<p>{{$sanpham->description}}</p>
+							<table>
+								<tbody>
+									<tr style="display: table-row;">
+										<th>Hãng: </th>
+										<td>{{ $hang_sx }}</td>
+									</tr>
+									<tr style="display: table-row;">
+										<th>Kích thước màn hình: </th>
+										<td>{{ $thongso->size }}</td>
+									</tr>
+									<tr style="display: table-row;">
+										<th>Độ phân giải: </th>
+										<td>{{ $thongso->resolution }}</td>
+									</tr>
+									<tr style="display: table-row;">
+										<th>RAM: </th>
+										<td>{{ $thongso->ram }}</td>
+									</tr>
+									<tr style="display: table-row;">
+										<th>ROM: </th>
+										<td>{{ $thongso->rom }}</td>
+									</tr>
+									<tr style="display: table-row;">
+										<th>Hệ điều hành: </th>
+										<td>{{ $thongso->os }}</td>
+									</tr>
+									<tr style="display: table-row;">
+										<th>Chip xử lý: </th>
+										<td>{{ $thongso->chipset }}</td>
+									</tr>
+									<tr style="display: table-row;">
+										<th>Camera: </th>
+										<td>{{ $thongso->camera }}</td>
+									</tr>
+									<tr style="display: table-row;">
+										<th>Dung lượng pin: </th>
+										<td>{{ $thongso->battery }}</td>
+									</tr>
+								</tbody>
+								
+							</table>
 						</div>
 					</div>
 					<div class="space50">&nbsp;</div>
@@ -160,4 +198,11 @@ dd($thongso);
 			</div>
 		</div> <!-- #content -->
 	</div> <!-- .container -->
+
+<style>
+	th {
+		padding-right: 30px; 
+		padding-bottom: 15px;
+	}
+</style>
 @endsection

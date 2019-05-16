@@ -39,8 +39,9 @@ class PageController extends Controller
         $sp_tuongtu = Product::where('id_type',$sanpham->id_type)->paginate(6);
         $sanpham_khuyenmai = Product::where('promotion_price','<>',0)->paginate(5);
         $sanpham2 = DB::table('products')->limit(5)->get();
-        $thongso = DB::table('specification')->where('specification.id_product','=',$req->id)->get();   
-    	return view('page.chitiet_sanpham',compact('sanpham','sp_tuongtu','sanpham_khuyenmai','sanpham2', 'thongso'));
+        $hang_sx = DB::table('type_products')->where('type_products.id','=',$sanpham->id_type)->pluck('type_products.name')->first();
+        $thongso = DB::table('specification')->where('specification.id_product','=',$req->id)->first();  
+    	return view('page.chitiet_sanpham',compact('sanpham','sp_tuongtu','sanpham_khuyenmai','sanpham2', 'thongso', 'hang_sx'));
     }
 
     public function getLienHe(){
