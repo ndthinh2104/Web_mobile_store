@@ -19,9 +19,14 @@
 <body>
 
 		@include('header')
-	<div class="rev-slider">
-		@yield('content')
-	</div> <!-- .container -->
+<div class="container">
+	<div class="row">
+		<div class="rev-slider">
+			@yield('content')
+		</div> <!-- .container -->
+	</div>
+</div>
+	
 		@include('footer')
 	
 

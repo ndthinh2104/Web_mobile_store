@@ -183,4 +183,9 @@ class PageController extends Controller
         Auth::logout();
         return redirect()->route('trang-chu');
     }
+    public function getSearch (Request $req) {
+        $ary = $req->input('s');
+        $aryProduct = Product::where('products.name','LIKE', '%'.$ary.'%')->get();
+        return view('page.timkiem', compact('aryProduct'));
+    }
 }
