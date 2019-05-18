@@ -100,19 +100,19 @@ Route::group(['namespace' => '\App\Http\Controllers\admin'], function () {
 	    ]);
 	    Route::get('/products', [
 	    	'as' => 'admin.products.list',
-	    	'uses' => 'AdminController@getListProduct'
+	    	'uses' => 'AdminProductsController@getListProduct'
 	    ]);
 	    Route::get('/customers', [
 	    	'as' => 'admin.customers.list',
-	    	'uses' => 'AdminController@getListCustomer'
+	    	'uses' => 'AdminCustomersController@getListCustomer'
 	    ]);
 	    Route::get('/product-categories', [
 	    	'as' => 'admin.products.cat',
-	    	'uses' => 'AdminController@getListProductType'
+	    	'uses' => 'AdminProductsController@getListProductType'
 	    ]);
 	    Route::get('/users', [
 	    	'as' => 'admin.users.list',
-	    	'uses' => 'AdminController@getListUser'
+	    	'uses' => 'AdminUsersController@getListUser'
 	    ]);
 	    Route::get('/bills', [
 	    	'as' => 'admin.bills.list',

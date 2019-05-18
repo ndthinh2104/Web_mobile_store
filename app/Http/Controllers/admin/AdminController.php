@@ -29,50 +29,6 @@ class AdminController extends Controller
 	}
 
 	/**
-	 * function getListProduct
-	 *
-	 * @return view
-	 */
-	public function getListProduct() {
-		$listProduct = Product::paginate(10);
-
-		return view('admin.list-product', compact('listProduct'));
-	}
-
-	/**
-	 * function getListProductType
-	 *
-	 * @return view
-	 */
-	public function getListProductType() {
-		$listProductType = ProductType::paginate(10);
-
-		return view('admin.list-product-type', compact('listProductType'));
-	}
-
-	/**
-	 * function getListCustomer
-	 *
-	 * @return view
-	 */
-	public function getListCustomer() {
-		$listUser = Customer::paginate(10);
-		$name_page = 'List customer';
-		return view('admin.list-customer', compact('listUser', 'name_page'));
-	}
-
-	/**
-	 * function getListUser
-	 *
-	 * @return view
-	 */
-	public function getListUser() {
-		$listUser = User::paginate(10);
-		$name_page = 'List user';
-		return view('admin.list-user', compact('listUser', 'name_page'));
-	}
-
-	/**
 	 * function getListBill
 	 *
 	 * @return view
