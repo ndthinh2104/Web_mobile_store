@@ -37,35 +37,35 @@
 
 						
 						<div class="form-block">
-							<label for="email">Email address*</label>
-							<input type="email" name="email" required>
+							<label for="email">Địa chỉ email (*)</label>
+							<input class="form-control" type="email" placeholder="Nhập email" name="email" required>
+						</div> 
+
+						<div class="form-block">
+							<label for="your_last_name">Họ và tên (*)</label>
+							<input class="form-control" type="text" placeholder="Nhập họ và tên" name="fullname" required>
 						</div>
 
 						<div class="form-block">
-							<label for="your_last_name">Fullname*</label>
-							<input type="text" name="fullname" required>
-						</div>
-
-						<div class="form-block">
-							<label for="adress">Address*</label>
-							<input type="text" name="address" value="Street Address" required>
+							<label for="adress">Địa chỉ (*)</label>
+							<input class="form-control" type="text" placeholder="Nhập địa chỉ" name="address" value="Street Address" required>
 						</div>
 
 
 						<div class="form-block">
-							<label for="phone">Phone*</label>
-							<input type="text" name="phone" required>
+							<label for="phone">Số điện thoại (*)</label>
+							<input class="form-control" placeholder="Nhập số điện thoại" type="text" name="phone" required>
 						</div>
 						<div class="form-block">
-							<label for="phone">Password*</label>
-							<input type="password" name="password" required>
+							<label for="phone">Mật khẩu (*)</label>
+							<input class="form-control" placeholder="Nhập mật khẩu" type="password" name="password" required>
 						</div>
 						<div class="form-block">
-							<label for="phone">Re password*</label>
-							<input type="password" name="re_password" required>
+							<label for="phone">Nhập lại mật khẩu (*)</label>
+							<input class="form-control" placeholder="Nhập lại mật khẩu" type="password" name="re_password" required>
 						</div>
 						<div class="form-block">
-							<button type="submit" class="btn btn-primary">Register</button>
+							<button type="submit" class="btn btn-primary">Đăng ký</button>
 						</div>
 					</div>
 					<div class="col-sm-3"></div>

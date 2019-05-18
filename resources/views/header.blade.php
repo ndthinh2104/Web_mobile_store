@@ -1,10 +1,11 @@
+
 <div id="header">
 		<div class="header-top">
 			<div class="container">
 				<div class="pull-left auto-width-left">
 					<ul class="top-menu menu-beta l-inline">
-						<li><a href=""><i class="fa fa-home"></i> 90-92 Lê Thị Riêng, Bến Thành, Quận 1</a></li>
-						<li><a href=""><i class="fa fa-phone"></i> 0163 296 7751</a></li>
+						<li><a href=""><i class="fa fa-home"></i>  236 Hoàng Quốc Việt, Cổ Nhuế, Bắc Từ Liêm, Hà Nội</a></li>
+						<li><a href=""><i class="fa fa-phone"></i> 0969 909 576</a></li>
 					</ul>
 				</div>
 				<div class="pull-right auto-width-right">
@@ -25,12 +26,12 @@
 		<div class="header-body">
 			<div class="container beta-relative">
 				<div class="pull-left">
-					<a href="index.html" id="logo"><img src="source/assets/dest/images/logo-cake.png" width="200px" alt=""></a>
+					<a href="index.html" id="logo"><img src="source/assets/dest/images/60343105_578424702649405_8124021539071852544_n.png" width="200px" alt=""></a>
 				</div>
 				<div class="pull-right beta-components space-left ov">
 					<div class="space10">&nbsp;</div>
 					<div class="beta-comp">
-						<form role="search" method="get" id="searchform" action="/">
+						<form role="search" method="get" id="searchform" action="{{ route('search')}}">
 					        <input type="text" value="" name="s" id="s" placeholder="Nhập từ khóa..." />
 					        <button class="fa fa-search" type="submit" id="searchsubmit"></button>
 						</form>
@@ -80,7 +81,7 @@
 				<nav class="main-menu">
 					<ul class="l-inline ov">
 						<li><a href="{{route('trang-chu')}}">Trang chủ</a></li>
-						<li><a href="#">Loại sản phẩm</a>
+						<li><a href="{{route('loaisanpham',1)}}">Loại sản phẩm</a>
 							<ul class="sub-menu">
 								@foreach($loai_sp as $loai)
 								<li><a href="{{route('loaisanpham',$loai->id)}}">{{$loai->name}}</a></li>

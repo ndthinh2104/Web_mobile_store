@@ -12,6 +12,7 @@ use App\BillDetail;
 use App\User;
 use Hash;
 use Auth;
+use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 
@@ -36,7 +37,11 @@ class PageController extends Controller
     public function getChitiet(Request $req){
         $sanpham = Product::where('id',$req->id)->first();
         $sp_tuongtu = Product::where('id_type',$sanpham->id_type)->paginate(6);
-    	return view('page.chitiet_sanpham',compact('sanpham','sp_tuongtu'));
+        $sanpham_khuyenmai = Product::where('promotion_price','<>',0)->paginate(5);
+        $sanpham2 = DB::table('products')->limit(5)->get();
+        $hang_sx = DB::table('type_products')->where('type_products.id','=',$sanpham->id_type)->pluck('type_products.name')->first();
+        $thongso = DB::table('specification')->where('specification.id_product','=',$req->id)->first();  
+    	return view('page.chitiet_sanpham',compact('sanpham','sp_tuongtu','sanpham_khuyenmai','sanpham2', 'thongso', 'hang_sx'));
     }
 
     public function getLienHe(){
@@ -133,6 +138,7 @@ class PageController extends Controller
         $user->full_name = $req->fullname;
         $user->email = $req->email;
         $user->password = Hash::make($req->password);
+        $user->status = "0";
         $user->phone = $req->phone;
         $user->address = $req->address;
         $user->save();
@@ -176,5 +182,10 @@ class PageController extends Controller
     public function postLogout(){
         Auth::logout();
         return redirect()->route('trang-chu');
+    }
+    public function getSearch (Request $req) {
+        $ary = $req->input('s');
+        $aryProduct = Product::where('products.name','LIKE', '%'.$ary.'%')->get();
+        return view('page.timkiem', compact('aryProduct'));
     }
 }

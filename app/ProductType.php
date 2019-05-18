@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ProductType extends Model
 {
-    protected $table = "products";
+    protected $table = "type_products";
 
     public function product_type(){
     	return $this->belongsTo('App\ProductType','id_type','id');

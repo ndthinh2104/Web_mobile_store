@@ -30,15 +30,15 @@
 
 						
 						<div class="form-block">
-							<label for="email">Email address*</label>
-							<input type="email" name="email" required>
+							<label for="email">Địa chỉ Email:</label>
+							<input class="form-control" placeholder="Nhập email" type="email" name="email" required>
 						</div>
 						<div class="form-block">
-							<label for="phone">Password*</label>
-							<input type="password" name="password" required>
+							<label for="phone">Mật khẩu:</label>
+							<input class="form-control" placeholder="Nhập mật khẩu" type="password" name="password" required>
 						</div>
 						<div class="form-block">
-							<button type="submit" class="btn btn-primary">Login</button>
+							<button type="submit" class="btn btn-primary">Đăng nhập </button>
 						</div>
 					</div>
 					<div class="col-sm-3"></div>
