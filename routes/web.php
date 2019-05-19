@@ -96,28 +96,87 @@ Route::group(['namespace' => '\App\Http\Controllers\admin'], function () {
     	'as' => 'admin.login',
     	'uses' => 'AdminAuthController@postLogin'
     ]);
-    // Route::group(['prefix' => config('core.base.general.admin_dir'), 'middleware' => 'auth'], function () {
 	Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 	    Route::get('/', [
 	    	'as' => 'admin',
 	    	'uses' => 'AdminController@getIndex'
 	    ]);
+	    Route::get('/products/edit/{id}', [
+	    	'as' => 'admin.products.edit',
+	    	'uses' => 'AdminProductsController@getEditProduct'
+	    ]);
+	    Route::get('/products/create', [
+	    	'as' => 'admin.products.create',
+	    	'uses' => 'AdminProductsController@getCreateProduct'
+	    ]);
+	    Route::post('/products/edit/{id}', [
+	    	'as' => 'admin.products.edit',
+	    	'uses' => 'AdminProductsController@postEditProduct'
+	    ]);
+	    Route::post('/products/create', [
+	    	'as' => 'admin.products.create',
+	    	'uses' => 'AdminProductsController@postCreateProduct'
+	    ]);
+	    Route::get('/products/delete/{id}', [
+            'as' => 'admin.products.delete',
+            'uses' => 'AdminProductsController@getDeleteProduct',
+        ]);
 	    Route::get('/products', [
 	    	'as' => 'admin.products.list',
-	    	'uses' => 'AdminController@getListProduct'
+	    	'uses' => 'AdminProductsController@getListProduct'
 	    ]);
 	    Route::get('/customers', [
 	    	'as' => 'admin.customers.list',
-	    	'uses' => 'AdminController@getListCustomer'
+	    	'uses' => 'AdminCustomersController@getListCustomer'
+	    ]);
+	    Route::get('/products-categories/create', [
+	    	'as' => 'admin.products.cat.create',
+	    	'uses' => 'AdminProductsController@getCreateProductType'
 	    ]);
 	    Route::get('/product-categories', [
 	    	'as' => 'admin.products.cat',
-	    	'uses' => 'AdminController@getListProductType'
+	    	'uses' => 'AdminProductsController@getListProductType'
 	    ]);
+	    Route::get('/products-categories/edit/{id}', [
+	    	'as' => 'admin.products.cat.edit',
+	    	'uses' => 'AdminProductsController@getEditProductType'
+	    ]);
+	    Route::post('/products-categories/edit/{id}', [
+	    	'as' => 'admin.products.cat.edit',
+	    	'uses' => 'AdminProductsController@postEditProductType'
+	    ]);
+	    Route::post('/products-categories/create', [
+	    	'as' => 'admin.products.cat.create',
+	    	'uses' => 'AdminProductsController@postCreateProductType'
+	    ]);
+	    Route::get('/products-categories/delete/{id}', [
+            'as' => 'admin.products.cat.delete',
+            'uses' => 'AdminProductsController@getDeleteProductType',
+        ]);
 	    Route::get('/users', [
 	    	'as' => 'admin.users.list',
-	    	'uses' => 'AdminController@getListUser'
+	    	'uses' => 'AdminUsersController@getListUser'
 	    ]);
+	    Route::get('/users/create', [
+	    	'as' => 'admin.users.create',
+	    	'uses' => 'AdminUsersController@getCreateUser'
+	    ]);
+	    Route::get('/users/edit/{id}', [
+	    	'as' => 'admin.users.edit',
+	    	'uses' => 'AdminUsersController@getEditUser'
+	    ]);
+	    Route::post('/users/edit/{id}', [
+	    	'as' => 'admin.users.edit',
+	    	'uses' => 'AdminUsersController@postEditUser'
+	    ]);
+	    Route::post('/users/create', [
+	    	'as' => 'admin.users.create',
+	    	'uses' => 'AdminUsersController@postCreateUser'
+	    ]);
+	    Route::get('/users/delete/{id}', [
+            'as' => 'admin.users.delete',
+            'uses' => 'AdminUsersController@getDeleteUser'
+        ]);
 	    Route::get('/bills', [
 	    	'as' => 'admin.bills.list',
 	    	'uses' => 'AdminController@getListBill'

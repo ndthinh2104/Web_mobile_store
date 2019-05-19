@@ -8,3 +8,6 @@
 	padding: 0 10px;
 	cursor: pointer;
 }
+.required-field{
+	color: #ff0000;
+}
