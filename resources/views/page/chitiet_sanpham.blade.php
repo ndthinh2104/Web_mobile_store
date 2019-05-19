@@ -41,7 +41,7 @@
 							<div class="space20">&nbsp;</div>
 
 							<div class="single-item-desc">
-								<p>{{$sanpham->description}}</p>
+								<p>{!! $sanpham->description !!}</p>
 							</div>
 							<div class="space20">&nbsp;</div>
 

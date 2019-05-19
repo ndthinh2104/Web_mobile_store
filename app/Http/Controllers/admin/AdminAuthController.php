@@ -58,7 +58,6 @@ class AdminAuthController extends Controller
             ])->first();
         if($user){
             if(Auth::attempt($credentials)){
-            dd($user);
             	return redirect(route('admin'));
             }
             else{

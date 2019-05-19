@@ -34,7 +34,7 @@
                 <tr>
                   <td class="w-50">{{ $user->id }}</td>
                   <td>
-                  	<a href="#">{{ $user->full_name }}</a>
+                  	<a href="{{ route('admin.users.edit', $user->id) }}">{{ $user->full_name }}</a>
                   </td>
                   <td>
                     {{ $user->email }}
@@ -44,10 +44,9 @@
                   </td>
                   <td class="w-100 text-center">
                   	<span class="efit-item text-success action-item">
-                  		<i class="fa fa-pencil" aria-hidden="true"></i>
-                  	</span>
-                  	<span class="delete-item text-danger action-item">
-                  		<i class="fa fa-times" aria-hidden="true"></i>
+                      <a href="{{ route('admin.users.edit', $user->id) }}">                      
+                  		  <i class="fa fa-pencil" aria-hidden="true"></i>
+                      </a>
                   	</span>
                   </td>
                 </tr>

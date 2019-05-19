@@ -32,13 +32,14 @@
                 <tr>
                   <td class="w-50">{{ $type->id }}</td>
                   <td>
-                  	<a href="#">{{ $type->name }}</a>
+                  	<a href="{{ route('admin.products.cat.edit', $type->id) }}">{{ $type->name }}</a>
                   </td>
                   <td class="w-100 text-center">
                   	<span class="efit-item text-success action-item">
+                      <a href="{{ route('admin.products.cat.edit', $type->id) }}"></a>
                   		<i class="fa fa-pencil" aria-hidden="true"></i>
                   	</span>
-                  	<span class="delete-item text-danger action-item">
+                  	<span class="delete-item text-danger action-item" data-delete="{{ route('admin.products.cat.delete', $type->id) }}">
                   		<i class="fa fa-times" aria-hidden="true"></i>
                   	</span>
                   </td>

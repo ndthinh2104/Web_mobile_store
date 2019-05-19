@@ -12,7 +12,8 @@ $(function () {
   // -----------------------
 
   // Get context with jQuery - using jQuery's .get() method.
-  var salesChartCanvas = $('#salesChart').get(0).getContext('2d');
+  if ($('#salesChart').length > 0){
+    var salesChartCanvas = $('#salesChart').get(0).getContext('2d');
   // This will get the first returned node in the jQuery collection.
   var salesChart       = new Chart(salesChartCanvas);
 
@@ -271,4 +272,6 @@ $(function () {
       spotColor: $this.data('spotcolor')
     });
   });
+  }
+
 });

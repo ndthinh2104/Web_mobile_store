@@ -34,15 +34,17 @@
                 <tr>
                   <td class="w-50">{{ $product->id }}</td>
                   <td>
-                  	<a href="#">{{ $product->name }}</a>
+                  	<a href="{{ route('admin.products.edit', $product->id) }}">{{ $product->name }}</a>
                   </td>
                   <td class="w-100 text-center">{{ $product->unit }}</td>
                   <td class="w-100 text-center">{{ $product->unit_price }}</td>
                   <td class="w-100 text-center">
                   	<span class="efit-item text-success action-item">
-                  		<i class="fa fa-pencil" aria-hidden="true"></i>
+                      <a href="{{ route('admin.products.edit', $product->id) }}">
+                  		  <i class="fa fa-pencil" aria-hidden="true"></i>
+                      </a>
                   	</span>
-                  	<span class="delete-item text-danger action-item">
+                  	<span class="delete-item text-danger action-item" data-delete="{{ route('admin.products.delete', $product->id) }}">
                   		<i class="fa fa-times" aria-hidden="true"></i>
                   	</span>
                   </td>

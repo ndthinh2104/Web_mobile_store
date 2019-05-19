@@ -8,6 +8,14 @@ class ProductType extends Model
 {
     protected $table = "type_products";
 
+    /**
+     * @var array
+     */
+    protected $fillable = [
+        'name',
+        'description',
+    ];
+
     public function product_type(){
     	return $this->belongsTo('App\ProductType','id_type','id');
     }

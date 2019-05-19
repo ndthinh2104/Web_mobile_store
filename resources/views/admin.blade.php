@@ -273,6 +273,8 @@
 <script src="{{ URL::asset('js/admin/dashboard2.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ URL::asset('js/admin/demo.js') }}"></script>
+<!-- CK Editor -->
+<script src="{{ URL::asset('js/admin/ckeditor.js') }}"></script>
 <!-- custom js -->
 <script src="{{ URL::asset('js/admin/custom.js') }}"></script>
 </body>
