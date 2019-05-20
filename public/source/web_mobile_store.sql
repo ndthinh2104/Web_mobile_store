@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th5 14, 2019 lúc 03:36 PM
+-- Thời gian đã tạo: Th5 20, 2019 lúc 03:50 PM
 -- Phiên bản máy phục vụ: 10.1.37-MariaDB
 -- Phiên bản PHP: 7.3.1
 
@@ -39,6 +39,13 @@ CREATE TABLE `bills` (
   `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+--
+-- Đang đổ dữ liệu cho bảng `bills`
+--
+
+INSERT INTO `bills` (`id`, `id_customer`, `date_order`, `total`, `payment`, `note`, `created_at`, `updated_at`) VALUES
+(16, 16, '2019-05-20', 21500000, 'COD', 'Làm gì có ghi chú', '2019-05-20 06:57:22', '2019-05-20 06:57:22');
+
 -- --------------------------------------------------------
 
 --
@@ -54,6 +61,13 @@ CREATE TABLE `bill_detail` (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Đang đổ dữ liệu cho bảng `bill_detail`
+--
+
+INSERT INTO `bill_detail` (`id`, `id_bill`, `id_product`, `quantity`, `unit_price`, `created_at`, `updated_at`) VALUES
+(19, 16, 1, 1, 21500000, '2019-05-20 06:57:22', '2019-05-20 06:57:22');
 
 -- --------------------------------------------------------
 
@@ -82,7 +96,8 @@ INSERT INTO `customer` (`id`, `name`, `gender`, `email`, `address`, `phone_numbe
 (14, 'Trần Trung Kiên', 'Nam', 'kientt@gmail.com', '1 Nguyễn Khuyến', '0365978542', 'Khách hay phàn nàn', '2019-05-12 14:17:55', '2017-03-23 04:46:05'),
 (13, 'Nguyễn Thị Lan Hương', 'Nữ', 'huongnguyenak96@gmail.com', '7 Tràng Thi', '0998745121', 'Vui lòng giao hàng trước 5h', '2019-05-12 14:18:39', '2017-03-21 07:29:31'),
 (12, 'Phạm Anh Khoa', 'Nam', 'khoapham@gmail.com', '222 Hoàng Quốc Việt', '0123456789', 'Vui lòng chuyển đúng hạn', '2019-05-12 14:19:17', '2017-03-21 07:20:07'),
-(11, 'Phạm Hương', 'Nữ', 'huongpham@gmail.com', '3 Lê Thị Riêng, Quận 1', '0365874444', 'không có ghi chú', '2019-05-12 14:19:48', '2017-03-21 07:16:09');
+(11, 'Phạm Hương', 'Nữ', 'huongpham@gmail.com', '3 Lê Thị Riêng, Quận 1', '0365874444', 'không có ghi chú', '2019-05-12 14:19:48', '2017-03-21 07:16:09'),
+(16, 'Nguyễn Đức Thịnh', 'nam', 'ndthinh2104@gmail.com', '26 Quán Sứ', '0336956600', 'Làm gì có ghi chú', '2019-05-20 06:57:22', '2019-05-20 06:57:22');
 
 -- --------------------------------------------------------
 
@@ -159,7 +174,8 @@ INSERT INTO `products` (`id`, `name`, `id_type`, `description`, `unit_price`, `p
 (23, 'Oppo R17 Pro', 6, 'Điện thoại OPPO R17 Pro Chính hãng được xem là chiếc điện thoại chủ lực của OPPO với những nâng cấp về viền màn hình mỏng, công nghệ cảm biến vân tay được tích hợp ngay trong màn hình cùng với thiết kế thời thượng. Đây được xem là sản phẩm mang đến cho người dùng nhiều trải nghiệm mới mẻ sẽ được ra mắt trong thời gian tới. ', 16990000, 0, 'oppo-r17-pro.jpg', 'chiếc', 0, '2016-10-13 02:20:00', '2016-10-19 03:20:00'),
 (24, 'Vsmart Active 1 Plus', 7, 'Vsmart Active 1 Plus: Sang trọng, camera kép, cấu hình khủng', 5790000, 4990000, 'vsmart-active-1-plus.png', 'chiếc', 0, '2016-10-13 02:20:00', '2016-10-19 03:20:00'),
 (25, 'Vsmart Joy 1 Plus', 7, 'Vsmart Joy 1+ (Plus) - Màn hình tai thỏ, camera kép xóa phông', 2690000, 0, 'vsmart-joy-1-plus.jpg', 'chiếc', 0, '2016-10-13 02:20:00', '2016-10-19 03:20:00'),
-(26, 'Vsmart Active 1', 7, 'Vsmart Active 1 là 1 trong 4 chiếc điện thoại được tập đoàn VinGroup ra mắt vào giữa tháng 12 vừa qua tại tòa nhà Landmark 81. Đây là phiên bản smartphone mang thương hiệu Vsmart có mức giá tầm trung có thiết kế cao cấp, cấu hình mạnh cùng với camera chất lượng cực kỳ tốt.', 3990000, 0, 'vsmart-active-1.jpg', 'chiếc', 0, '2016-10-13 02:20:00', '2016-10-19 03:20:00');
+(26, 'Vsmart Active 1', 7, 'Vsmart Active 1 là 1 trong 4 chiếc điện thoại được tập đoàn VinGroup ra mắt vào giữa tháng 12 vừa qua tại tòa nhà Landmark 81. Đây là phiên bản smartphone mang thương hiệu Vsmart có mức giá tầm trung có thiết kế cao cấp, cấu hình mạnh cùng với camera chất lượng cực kỳ tốt.', 3990000, 0, 'vsmart-active-1.jpg', 'chiếc', 0, '2016-10-13 02:20:00', '2016-10-19 03:20:00'),
+(27, 'Asus Zenfone 6', 8, '<p>Chiếc điện thoại bom tấn 2019 của Đ&agrave;i Loan</p>', 11900000, NULL, 'photo-1-15579993592741282588428.jpg', 'chiếc', 0, '2019-05-20 07:01:06', '2019-05-20 07:01:06');
 
 -- --------------------------------------------------------
 
@@ -259,7 +275,8 @@ INSERT INTO `type_products` (`id`, `name`, `description`, `image`, `created_at`,
 (4, 'Nokia', 'Sau một thời gian tạm ngưng hoạt động, “gã khổng lồ” Nokia đã chính thức quay trở lại với loạt sản phẩm chạy Android được giới công nghệ cũng như cộng đồng người dùng đánh giá cao, hứa hẹn về một ngày không xa, Nokia sẽ lấy lại vị thế hàng đầu của mình.', 'nokia.jpg', '2016-10-26 03:29:19', '2016-10-26 02:22:22'),
 (5, 'Huawei', 'Điện thoại Huawei – Thương hiệu hàng đầu trên thị trường di động. Huawei là một trong những công ty nổi tiếng trong lĩnh vực công nghệ. Nhiều năm liền, hãng này chỉ đứng sau Apple và Samsung trên bảng xếp hạng những nhà sản xuất smartphone lớn nhất thế giới nhờ những sản phẩm có thiết kế đẹp và chất lượng rất tốt. Trong năm 2018, Huawei cho ra mắt 2 dòng cao cấp là Mate 20 và Mate 20 Pro nhằm mang đến những trải nghiệm tuyệt vời cho người dùng.', 'huawei.jpg', '2016-10-28 04:00:00', '2016-10-27 04:00:23'),
 (6, 'OPPO', 'Với sự đầu tư nghiêm túc về quy trình sản xuất, quảng cáo cũng như chính sách hậu mãi tốt, điện thoại OPPO ngày càng có chỗ đứng vững chắc trên thị trường quốc tế lẫn Việt Nam. Sở hữu kiểu dáng thanh lịch, mang vẻ đẹp quyến rũ và có chất lượng tốt, đặc biệt ở bộ phận camera, điện thoại OPPO đã khẳng định được thương hiệu và chiếm được lòng tin của không ít người dùng Việt.', 'oppo.jpg', '2016-10-25 17:19:00', NULL),
-(7, 'Vsmart', 'Vsmart - Thương hiệu smartphone của tập đoàn Vingroup vừa tung ra bộ tứ sản phẩm đầu tiên của mình hứa hẹn sẽ đem đến cuộc cạnh tranh khốc liệt trên thị trường điện thoại vốn đã \"đất chật người đông\" tại nước ta. Được chuyển giao công nghệ từ hãng điện thoại nổi tiếng đến từ Tây Ban Nha BQ (Vingroup sở hữu phần lớn cổ phần), chỉ trong 6 tháng Vsmart đã ra mắt 4 mẫu điện thoại đầu tiên của mình với mức giá cạnh tranh', 'vsmart.jpg', '2016-10-25 17:19:00', NULL);
+(7, 'Vsmart', 'Vsmart - Thương hiệu smartphone của tập đoàn Vingroup vừa tung ra bộ tứ sản phẩm đầu tiên của mình hứa hẹn sẽ đem đến cuộc cạnh tranh khốc liệt trên thị trường điện thoại vốn đã \"đất chật người đông\" tại nước ta. Được chuyển giao công nghệ từ hãng điện thoại nổi tiếng đến từ Tây Ban Nha BQ (Vingroup sở hữu phần lớn cổ phần), chỉ trong 6 tháng Vsmart đã ra mắt 4 mẫu điện thoại đầu tiên của mình với mức giá cạnh tranh', 'vsmart.jpg', '2016-10-25 17:19:00', NULL),
+(8, 'Asus', '<p>Nh&agrave; sản xuất đến từ Đ&agrave;i Loan</p>', '', '2019-05-20 06:59:02', '2019-05-20 06:59:02');
 
 -- --------------------------------------------------------
 
@@ -359,25 +376,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT cho bảng `bills`
 --
 ALTER TABLE `bills`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT cho bảng `bill_detail`
 --
 ALTER TABLE `bill_detail`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT cho bảng `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT cho bảng `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT cho bảng `slide`
@@ -395,7 +412,7 @@ ALTER TABLE `specification`
 -- AUTO_INCREMENT cho bảng `type_products`
 --
 ALTER TABLE `type_products`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT cho bảng `users`
