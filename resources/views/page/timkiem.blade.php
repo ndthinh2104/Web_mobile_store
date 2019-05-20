@@ -19,7 +19,7 @@
                         </div>
                         <div class="single-item-body">
                             <p class="single-item-title">{{$prd->name}}</p>
-                            <p class="single-item-price" style="font-size: 18px">
+                            <p class="single-item-price" style="font-size: 15px">
                                 @php
                                 $del = '';
                                 if($prd->promotion_price != 0) {

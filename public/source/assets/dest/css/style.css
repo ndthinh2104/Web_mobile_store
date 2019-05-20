@@ -1868,7 +1868,8 @@ font-size:13px
 ============================================================================= */
 
 .single-item {
-position:relative
+position:relative;
+margin: 10px;
 }
 
 .single-item-header {
@@ -4878,10 +4879,10 @@ transition: all 0.10s ease-out;}
 transform: scale(1.8);
 -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
 filter: alpha(opacity=100);}
-.beta-person-full img{-moz-transition: all 0.4s ease-in-out;
-   -o-transition: all 0.4s ease-in-out;
-   -ms-transition: all 0.4s ease-in-out;
-   transition: all 0.4s ease-in-out;}
+.beta-person-full img {
+   transition: all 0.4s ease-in-out;
+   min-height: 220px;
+    }
 .bets-img-hover{width:100%; overflow:hidden;}
 
 

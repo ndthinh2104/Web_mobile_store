@@ -19,7 +19,7 @@ if(Auth::check()){
 			</div>
 			<div class="pull-right">
 				<div class="beta-breadcrumb">
-					<a href="index.html">Trang chủ</a> / <span>Đặt hàng</span>
+					<a href="{{route('trang-chu')}}">Trang chủ</a> / <span>Đặt hàng</span>
 				</div>
 			</div>
 			<div class="clearfix"></div>
@@ -31,7 +31,10 @@ if(Auth::check()){
 		
 		<form action="{{route('dathang')}}" method="post" class="beta-form-checkout">
 			<input type="hidden" name="_token" value="{{csrf_token()}}">
-			<div class="row">@if(Session::has('thongbao')){{Session::get('thongbao')}}@endif</div>
+
+			@if(Session::has('thongbao'))
+			<div class="alert alert-success">{{Session::get('thongbao')}}</div>
+			@endif
 			<div class="row">
 				<div class="col-sm-6">
 					<h4>Đặt hàng</h4>
