@@ -19,6 +19,11 @@
           <div class="box">
             <!-- /.box-header -->
             <div class="box-body">
+              <div class="search-customer text-right">
+                <label>Search</label>
+                <input type="text" name="key_word" id="key_word" placeholder="key word...">
+              </div>
+              <div id="listCustomer">
               <table id="example2" class="table table-bordered table-hover">
                 <thead>
                 <tr>
@@ -56,6 +61,7 @@
               </table>
               <div class="paginate text-center">
               	{!! $listUser->links() !!}
+              </div>
               </div>
             </div>
             <!-- /.box-body -->

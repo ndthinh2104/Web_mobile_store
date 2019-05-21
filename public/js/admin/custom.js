@@ -34,4 +34,21 @@ $( document ).ready(function() {
 		 	}
 		});
 	});
+
+	$('#key_word').on('keyup', function() {
+		var key_word = $(this).val().trim();
+		$.ajax({
+			url: '/admin/customers/search',
+			type: 'get',
+			data: {
+				key_word: key_word
+			},
+			success: function(result){
+				result = JSON.parse(result);
+		   		if (result.status == 1) {
+		   			$('#listCustomer').html(result.data);
+		   		}
+		 	}
+		});
+	});
 });

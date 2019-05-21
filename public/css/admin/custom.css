@@ -11,3 +11,17 @@
 .required-field{
 	color: #ff0000;
 }
+.search-customer {
+	margin-bottom: 15px;
+	text-align: right;
+}
+.search-customer label {
+	display: inline-block;
+	padding-right: 15px;
+	vertical-align: middle;
+	margin: 0;
+}
+.search-customer input {
+	display: inline-block;
+	vertical-align: middle;
+}

@@ -129,6 +129,10 @@ Route::group(['namespace' => '\App\Http\Controllers\admin'], function () {
 	    	'as' => 'admin.customers.list',
 	    	'uses' => 'AdminCustomersController@getListCustomer'
 	    ]);
+	    Route::get('/customers/search', [
+	    	'as' => 'admin.customers.search',
+	    	'uses' => 'AdminCustomersController@getSearchCustomer'
+	    ]);
 	    Route::get('/products-categories/create', [
 	    	'as' => 'admin.products.cat.create',
 	    	'uses' => 'AdminProductsController@getCreateProductType'
