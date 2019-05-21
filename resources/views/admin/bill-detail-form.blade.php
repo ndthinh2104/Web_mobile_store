@@ -8,8 +8,8 @@
       </h1>
       <ol class="breadcrumb">
         <li><a href="{{ route('admin') }}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-        <li class="active">Bill detail</li>
-        <li class="active">16</li>
+        <li class="active" href="{{ route('admin.bills.list') }}">Bill detail</li>
+        <li class="active">{{$bill->id}}</li>
       </ol>
     </section>
 
@@ -150,9 +150,9 @@
                             </td>
                             
                             <td>
-                                Acme Corp.<br>
-                                John Doe<br>
-                                john@example.com
+                                HV KTQS Corp.<br>
+                                Nguyễn Đức Thịnh<br>
+                                thinhnd@d2t.vn
                             </td>
                         </tr>
                     </table>
