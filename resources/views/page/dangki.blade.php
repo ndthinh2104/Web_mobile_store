@@ -48,7 +48,7 @@
 
 						<div class="form-block">
 							<label for="adress">Địa chỉ (*)</label>
-							<input class="form-control" type="text" placeholder="Nhập địa chỉ" name="address" value="Street Address" required>
+							<input class="form-control" type="text" placeholder="Nhập địa chỉ" name="address" required>
 						</div>
 
 
