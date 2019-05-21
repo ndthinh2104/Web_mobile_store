@@ -185,5 +185,9 @@ Route::group(['namespace' => '\App\Http\Controllers\admin'], function () {
 	    	'as' => 'admin.bills.list',
 	    	'uses' => 'AdminController@getListBill'
 	    ]);
+	   	Route::get('/bills/edit/{id}', [
+	    	'as' => 'admin.bills.edit',
+	    	'uses' => 'AdminController@getEditBill'
+	    ]);
 	});
 });

@@ -69,7 +69,7 @@ if(Auth::check()){
 					
 					<div class="form-block">
 						<label for="notes">Ghi chú</label>
-						<textarea id="notes" name="notes"></textarea>
+						<textarea id="notes" name="notes" required></textarea>
 					</div>
 				</div>
 				<div class="col-sm-6">

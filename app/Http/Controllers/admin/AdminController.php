@@ -12,6 +12,7 @@ use Session;
 use App\User;
 use Hash;
 use Auth;
+use Illuminate\Support\Facades\DB;
 
 use App\Http\Controllers\Controller;
 
@@ -39,5 +40,15 @@ class AdminController extends Controller
 		->paginate(10);
 
 		return view('admin.list-bill', compact('listBill'));
+	}
+	public function getEditBill($id) {
+		$bill = Bill::findOrFail($id);
+		$billdetail = DB::table('bill_detail')->where('bill_detail.id_bill','=',$id)->get();
+		$product = [];
+		foreach($billdetail as $pro){
+
+			$product[]=DB::table('products')->where('products.id','=',$pro->id_product)->first();
+		}
+		return view('admin.bill-detail-form', compact('bill','product'));
 	}
 }

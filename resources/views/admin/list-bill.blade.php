@@ -34,7 +34,7 @@
                 <tr>
                   <td class="w-50">{{ $bill->id }}</td>
                   <td>
-                  	<a href="#">{{ $bill->name }}</a>
+                  	<a href="{{route('admin.bills.edit',$bill->id)}}">{{ $bill->name }}</a>
                   </td>
                   <td class="w-100 text-center">{{ $bill->date_order }}</td>
                   <td class="w-100 text-center">{{ $bill->total }}</td>
