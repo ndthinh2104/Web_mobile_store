@@ -96,6 +96,10 @@ Route::group(['namespace' => '\App\Http\Controllers\admin'], function () {
     	'as' => 'admin.login',
     	'uses' => 'AdminAuthController@postLogin'
     ]);
+    Route::get('admin/logout', [
+    	'as' => 'admin.logout',
+    	'uses' => 'AdminAuthController@logout'
+    ]);
 	Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 	    Route::get('/', [
 	    	'as' => 'admin',
