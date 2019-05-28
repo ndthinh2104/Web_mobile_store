@@ -133,6 +133,26 @@ Route::group(['namespace' => '\App\Http\Controllers\admin'], function () {
 	    	'as' => 'admin.customers.search',
 	    	'uses' => 'AdminCustomersController@getSearchCustomer'
 	    ]);
+	    Route::get('/customers/create', [
+	    	'as' => 'admin.customers.create',
+	    	'uses' => 'AdminCustomersController@getCreateCustomer'
+	    ]);
+	    Route::get('/customers/edit/{id}', [
+	    	'as' => 'admin.customers.edit',
+	    	'uses' => 'AdminCustomersController@getEditCustomer'
+	    ]);
+	    Route::post('/customers/edit/{id}', [
+	    	'as' => 'admin.customers.edit',
+	    	'uses' => 'AdminCustomersController@postEditCustomer'
+	    ]);
+	    Route::post('/customers/create', [
+	    	'as' => 'admin.customers.create',
+	    	'uses' => 'AdminCustomersController@postCreateCustomers'
+	    ]);
+	    Route::get('/customers/delete/{id}', [
+            'as' => 'admin.customers.delete',
+            'uses' => 'AdminCustomersController@getDeleteCustomer'
+        ]);
 	    Route::get('/products-categories/create', [
 	    	'as' => 'admin.products.cat.create',
 	    	'uses' => 'AdminProductsController@getCreateProductType'
