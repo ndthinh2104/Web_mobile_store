@@ -27,12 +27,14 @@
     		  <i class="fa fa-pencil" aria-hidden="true"></i>
         </a>
     	</span>
-    	<span class="delete-item text-danger action-item" data-delete="{{ route('admin.customners.delete', $user->id) }}">
+    	<span class="delete-item text-danger action-item" data-delete="{{ route('admin.customers.delete', $user->id) }}">
     		<i class="fa fa-times" aria-hidden="true"></i>
     	</span>
     </td>
   </tr>
+  @endforeach
   </tbody>
 </table>
 <div class="paginate text-center">
 	{!! $listCustomer->links() !!}
+</div>

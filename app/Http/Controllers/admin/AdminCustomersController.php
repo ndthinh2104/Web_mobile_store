@@ -56,7 +56,7 @@ class AdminCustomersController extends Controller
 
 		if ($listCustomer) {
 			$aryRet['status'] = 1;
-			$aryRet['data'] = view('admin.list-customer-search', compact('listCustomer', 'name_page'))->render();
+			$aryRet['data'] = view('admin.list-customer-search', compact('listCustomer'))->render();
 		}
 
 		return json_encode($aryRet);
